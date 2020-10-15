@@ -1,6 +1,5 @@
 <?php
 
-
 class Post
 {
 //required attributes
@@ -23,6 +22,18 @@ class Post
         $this->lastName = $lastName;
         $this->date = $date;
     }
+
+    //link with JSON_FILE messages.json
+    // https://www.w3schools.com/js/js_json_php.asp
+    // serialize ( mixed $value ) : string
+    public function serialize()
+    {
+        return [
+            'title' => $this->title,
+            'content' => $this->content
+        ];
+    }
+
 
     /**
      * @return string

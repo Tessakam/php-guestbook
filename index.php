@@ -7,14 +7,12 @@ error_reporting(E_ALL);
 
 //compile other files
 require 'index.html';
+require 'PostLoader.php';
+require 'Post.php';
+require 'messages.json';
+
 
 session_start(); // put the session behind the require
-
-//image this code could be a complex query
-$users = ['John Doe', 'Joe Doe', 'John Smith', 'An Onymous'];
-$articles = ['Terror over london', 'Football: a useless hobby?', 'Economic crisis ahead, says expert', 'Fortis is Fortwas'];
-//end controller
-//start view
 
 function whatIsHappening()
 {

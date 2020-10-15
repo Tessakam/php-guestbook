@@ -8,8 +8,37 @@
     <title>My guestbook</title>
 </head>
 <body>
-<h1>Welcome to my site!</h1>
-<h2>Recent articles</h2>
-<h2>Recent articles</h2>
+
+<div class="field">
+    <h1>Welcome to my guestbook!</h1>
+    <p>Feel free to leave a message in our guestbook, I'm happy to read your comments.</p>
+</div>
+
+<form name="guestbook">
+
+    <div class="field">
+        <input type="text" class="form-control" name="title" placeholder="Title *" required><br>
+        <input type="text" class="form-control" name="firstName" placeholder="First name *" required><br>
+        <input type="text" class="form-control" name="lastName" placeholder="Last name *" required><br>
+    </div>
+
+    <div class="message">
+        <br><textarea class="form-control" name="message" placeholder="Your message *" required maxlength="2000" style="width: 500px"></textarea>
+    </div>
+
+    <div class="action">
+        <div>
+            <br>
+            <button type="submit" name="submit">SUBMIT</button>
+        </div>
+    </div>
+
+    <div class="field">
+        <h1>Recent posts!</h1>
+        <p>....</p>
+    </div>
+
+</form>
+
 </body>
 </html>
