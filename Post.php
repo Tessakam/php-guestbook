@@ -23,17 +23,30 @@ class Post
         $this->date = $date;
     }
 
-    //link with JSON_FILE messages.json
-    // https://www.w3schools.com/js/js_json_php.asp
-    // serialize ( mixed $value ) : string
-    public function serialize()
+    // link with JSON_FILE posts.json
+    // tips from Hendrik
+    // 1) method / post
+    // 2) put the variables in array ($title) - array.push
+    // 3) json automatically creates array in posts.json --> json array
+
+    //get access to the properties
+
+    public function export()
     {
+        array (file_get_contents(posts.json));
+        $this->content->json_decode;
+
+        array (file_put_contents(posts.json));
+        $this->content->json_encode;
+
         return [
             'title' => $this->title,
-            'content' => $this->content
+            'content' => $this->content,
+            'firstName' => $this->firstName,
+            'lastName' => $this->lastName,
+            'date' => $this->date,
         ];
     }
-
 
     /**
      * @return string

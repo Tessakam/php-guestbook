@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 require 'index.html';
 require 'PostLoader.php';
 require 'Post.php';
-require 'messages.json';
+require 'posts.json';
 
 
 session_start(); // put the session behind the require
