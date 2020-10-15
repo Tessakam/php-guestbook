@@ -36,7 +36,7 @@ class Post
 
     //get access to the properties
 
-    public function export()
+    public function JSON()
     {
         return [
             'title' => $this->title,
