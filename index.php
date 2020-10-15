@@ -11,6 +11,19 @@ require 'PostLoader.php';
 require 'Post.php';
 require 'posts.json';
 
+//creates variables
+$postLoader = new PostLoader();
+$post = new Post($title, $firstName, $lastName, $content);
+$postLoader->addPost($post);
+
+//save the post after submit
+//make sure script can handle website defacement
+if (isset($_POST['submit'])) {
+    $title = htmlspecialchars
+    $firstName = htmlspecialchars
+    $lastName = htmlspecialchars
+    $content = htmlspecialchars
+}
 
 session_start(); // put the session behind the require
 

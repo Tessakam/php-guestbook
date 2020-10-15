@@ -1,9 +1,14 @@
 <?php
 
+declare(strict_types=1);
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
 class Post
 {
 //required attributes
-    private string $title, $content, $firstName, $lastName;
+    private string $title, $firstName, $lastName, $content;
     private DateTime $date;
 
     /**
@@ -33,12 +38,6 @@ class Post
 
     public function export()
     {
-        array (file_get_contents(posts.json));
-        $this->content->json_decode;
-
-        array (file_put_contents(posts.json));
-        $this->content->json_encode;
-
         return [
             'title' => $this->title,
             'content' => $this->content,
