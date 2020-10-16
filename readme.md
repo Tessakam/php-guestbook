@@ -1,3 +1,10 @@
+! How to solve permission denied of Json file?
+Refresh: https://www.guru99.com/file-permissions.html#2
+- Initial rights of posts.json was -rw -rw -r
+- Change these rights so Owner and Group has read/write/execute rights but User has only read (774)
+- Go to terminal, location of json file (var/www/php-guestbook/posts.json)
+- "sudo chown 774 posts.json" - the rights changed tot -rwx rwx r--
+
 # Title: PHP Guestbook
 
 - Repository: `challenge-php-guestbook`
