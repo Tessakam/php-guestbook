@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 //compile other files
 require 'PostLoader.php';
 require 'Post.php';
-require 'posts.json';
+//require 'posts.json';
 
 //creates variables
 $postLoader = new PostLoader();
@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
     $lastName = htmlspecialchars(trim($_POST['lastName']));
     $content = htmlspecialchars(trim($_POST['content']));
 
-$post = new Post($title, $firstName, $lastName, $content); //make sure the variaables are IN the submit, otherwise undefined!
+$post = new Post($title, $firstName, $lastName, $content); //make sure the variables are IN the submit, otherwise undefined!
 $postLoader->addPost($post);
 $postLoader->save();
 }
@@ -48,10 +48,11 @@ $postLoader->save();
         <input type="text" class="form-control" name="title" placeholder="Title: your subject *" required> <br><br>
         <input type="text" class="form-control" name="firstName" placeholder="First name *" required>
         <input type="text" class="form-control" name="lastName" placeholder="Last name *" required><br>
+        <input type="text" class="form-control" name="lastName" placeholder="Last name *" required><br>
     </div>
 
     <div class="message">
-        <br><textarea class="form-control" name="message" placeholder="Your message *" required maxlength="2000" style="width: 500px"></textarea>
+        <br><textarea class="form-control" name="content" placeholder="Your message *" required maxlength="2000" style="width: 500px"></textarea>
     </div>
 
     <div class="action">
@@ -63,7 +64,7 @@ $postLoader->save();
 
     <div>
         <h1>Recent posts!</h1>
-        <?php echo $postLoader;
+        <?php echo $postLoader->getPost();
         ?>
     </div>
 
@@ -84,5 +85,5 @@ function whatIsHappening()
     echo '<h2>$_SESSION</h2>';
     var_dump($_SESSION['blackjack']);
 }
-whatIsHappening();
+//whatIsHappening();
 ?>

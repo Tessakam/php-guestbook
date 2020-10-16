@@ -25,6 +25,10 @@ class PostLoader
         file_put_contents(self::JSON_file, json_encode($this->getPost()));
     }
 
+     public function getPost(): array
+    {
+        return $this->post;
+    }
 
     public function addPost(Post $post)
     {
@@ -34,22 +38,4 @@ class PostLoader
         // clear the old file
         // json_encode or serialize to the file of the post array
     }
-
-    /**
-     * @return array
-     */
-    public function getPost(): array
-    {
-        return $this->post;
-    }
-
-    /**
-     * @param array $post
-     */
-    public function setPost(array $post): void
-    {
-        $this->post = $post;
-    }
-    // only show the latest 20 posts
-
 }

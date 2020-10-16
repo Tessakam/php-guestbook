@@ -3,7 +3,7 @@ Refresh: https://www.guru99.com/file-permissions.html#2
 - Initial rights of posts.json was -rw -rw -r
 - Change these rights so Owner and Group has read/write/execute rights but User has only read (774)
 - Go to terminal, location of json file (var/www/php-guestbook/posts.json)
-- "sudo chown 774 posts.json" - the rights changed tot -rwx rwx r--
+- "sudo chown www-data:www-data posts.json" - the rights changed tot -rw rw r-- www.data
 
 # Title: PHP Guestbook
 

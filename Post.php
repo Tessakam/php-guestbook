@@ -44,9 +44,9 @@ class Post implements JsonSerializable // Implement JsonSerializable + add to ob
     /**
      * @return DateTime
      */
-    public function getDate(): DateTime
+    public function getDate(DateTime $time): void
     {
-        return $this->date;
+        $this->date = $date;
     }
 
 }
