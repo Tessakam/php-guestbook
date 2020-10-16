@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
     $content = htmlspecialchars(trim($_POST['content']));
 }
 
-$post = new Post($title, $firstName, $lastName, $content); //todo check why still undefined!
+$post = new Post($title, $firstName, $lastName, $content, $date); //todo check why still undefined!
 
 //define variables
 $title = $post->getTitle();
@@ -33,8 +33,6 @@ $lastName = $post->getLastName();
 $date = $post->getDate();
 
 $postLoader->addPost($post);
-$postLoader->savePost($post);
-$postLoader->showPost($post);
 
 session_start(); // put the session behind the require
 

@@ -13,24 +13,24 @@ class PostLoader
     // assign each entry to a Post class
     // loading the post
 
+    /*Koen:
+    $data = json_encode('');
+    foreach($data AS $post) {
+     $this->post[] = new Post($content['title']);*/
+
     //define external json file
     public const JSON_file = 'posts.json';
     private array $post = [];
 
     public function __construct()
     {
-        /*
-        Koen:
-       $data = json_encode('');
+        $data = array(json_decode(file_get_contents(self::JSON_file),true));
+
         foreach($data AS $post) {
-            $this->post[] = new Post($content['title']);*/
+            $this->post[] = new Post($post['title'], $post['content'], $post['firstName'], $post['lastName'], $post['date']);
+        }
 
-        //todo check decode and encode error
-        array(file_get_contents(self::JSON_file),true);
-        $this->post->json_decode;
-
-        array(file_put_contents(self::JSON_file), true);
-        $this->post->json_encode;
+        file_put_contents(self::JSON_file,json_encode($this->getPost()));
     }
 
     public function addPost(Post $post)
@@ -42,15 +42,21 @@ class PostLoader
         // json_encode or serialize to the file of the post array
     }
 
-    public function savePost (Post $post)
+    /**
+     * @return array
+     */
+    public function getPost(): array
     {
-        // save the new message to the array
-
+        return $this->post;
     }
 
-    public function showPost (Post $post)
+    /**
+     * @param array $post
+     */
+    public function setPost(array $post): void
     {
+        $this->post = $post;
+    }
         // only show the latest 20 posts
 
-    }
 }
