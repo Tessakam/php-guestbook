@@ -7,27 +7,16 @@ error_reporting(E_ALL);
 
 class PostLoader
 {
-    // open a file
-    // json_decode or unserialise it
-    // loop over the data from the file
-    // assign each entry to a Post class
-    // loading the post
-
-    /*Koen:
-    $data = json_encode('');
-    foreach($data AS $post) {
-     $this->post[] = new Post($content['title']);*/
-
     //define external json file
     public const JSON_file = 'posts.json';
     private array $post = [];
 
     public function __construct()
     {
-        $data = array(json_decode(file_get_contents(self::JSON_file),true));
+        $data = (json_decode(file_get_contents(self::JSON_file),true));
 
         foreach($data AS $post) {
-            $this->post[] = new Post($post['title'], $post['content'], $post['firstName'], $post['lastName'], $post['date']);
+            $this->post[] = new Post($post['title'], $post['content'], $post['firstName'], $post['lastName']);
         }
 
         file_put_contents(self::JSON_file,json_encode($this->getPost()));

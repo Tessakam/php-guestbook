@@ -19,7 +19,7 @@ class Post
      * @param string $lastName
      * @param DateTime $date
      */
-    public function __construct(string $title, string $content, string $firstName, string $lastName, DateTime $date)
+    public function __construct(string $title, string $content, string $firstName, string $lastName)
     {
         $this->title = $title;
         $this->content = $content;
@@ -29,13 +29,6 @@ class Post
     }
 
     // link with JSON_FILE posts.json
-    // tips from Hendrik
-    // 1) method / post
-    // 2) put the variables in array ($title) - array.push
-    // 3) json automatically creates array in posts.json --> json array
-
-    //get access to the properties
-
     public function JSON()
     {
         return [
@@ -48,38 +41,6 @@ class Post
     }
 
     /**
-     * @return string
-     */
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
-
-    /**
-     * @return string
-     */
-    public function getContent(): string
-    {
-        return $this->content;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFirstName(): string
-    {
-        return $this->firstName;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLastName(): string
-    {
-        return $this->lastName;
-    }
-
-    /**
      * @return DateTime
      */
     public function getDate(): DateTime
@@ -87,6 +48,6 @@ class Post
         return $this->date;
     }
 
-
 }
+
 
