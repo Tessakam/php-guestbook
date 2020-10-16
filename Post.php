@@ -5,7 +5,8 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-class Post
+class Post implements JsonSerializable // Implement JsonSerializable + add to object.
+// Reason: private/protected variables can't be seen by json_encode().
 {
 //required attributes
     private string $title, $firstName, $lastName, $content;
@@ -28,8 +29,8 @@ class Post
         $this->date = new DateTime();
     }
 
-    // link with JSON_FILE posts.json
-    public function JSON()
+    // link with Class Post and JsonS JSON_FILE posts.json
+    public function jsonSerialize()
     {
         return [
             'title' => $this->title,

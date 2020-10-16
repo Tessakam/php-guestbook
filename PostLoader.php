@@ -13,14 +13,18 @@ class PostLoader
 
     public function __construct()
     {
-        $data = (json_decode(file_get_contents(self::JSON_file),true));
+        $data = (json_decode(file_get_contents(self::JSON_file), true));
 
-        foreach($data AS $post) {
+        foreach ($data as $post) {
             $this->post[] = new Post($post['title'], $post['content'], $post['firstName'], $post['lastName']);
         }
-
-        file_put_contents(self::JSON_file,json_encode($this->getPost()));
     }
+
+    public function save()
+    {
+        file_put_contents(self::JSON_file, json_encode($this->getPost()));
+    }
+
 
     public function addPost(Post $post)
     {
@@ -46,6 +50,6 @@ class PostLoader
     {
         $this->post = $post;
     }
-        // only show the latest 20 posts
+    // only show the latest 20 posts
 
 }
