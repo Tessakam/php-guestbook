@@ -25,7 +25,7 @@ class Post
         $this->content = $content;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
-        $this->date = $date;
+        $this->date = new DateTime();
     }
 
     // link with JSON_FILE posts.json
