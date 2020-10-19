@@ -3,7 +3,13 @@ Refresh: https://www.guru99.com/file-permissions.html#2
 - Initial rights of posts.json was -rw -rw -r
 - Change these rights so Owner and Group has read/write/execute rights but User has only read (774)
 - Go to terminal, location of json file (var/www/php-guestbook/posts.json)
-- "sudo chown www-data:www-data posts.json" - the rights changed tot -rw rw r-- www.data
+- "sudo chown www-data:becode posts.json" - the rights changed tot -rw(x) rw(x) r-- www.data - becode
+
+! fun game to learn OOP
+https://jakubjahic.itch.io/learn-object-oriented-programming
+
+! import JSON into PHP
+https://www.kodingmadesimple.com/2017/05/add-update-delete-read-json-file-php.html
 
 # Title: PHP Guestbook
 
@@ -30,6 +36,8 @@ Any visitor on te page can leave a message on your page that are then saved and 
 You can store the messages in a file on your system. You can use the brother of [file_get_contents()](https://php.net/file_get_contents) for this: [file_put_contents()](https://php.net/file_put_contents) .
 
 You can either use [json_encode()](https://php.net/json_encode) or [serialize()](https://php.net/serialize) to convert your array to a string to store.
+
+https://www.kodingmadesimple.com/2017/05/add-update-delete-read-json-file-php.html
 
 ## Must-have features
 - Posts must have the following attributes:
